@@ -3,46 +3,695 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uyeah Toys</title>
+  <title>Uyeah Toys | Custom Plush Manufacturer</title>
+  <meta name="description" content="Uyeah Toys provides custom plush toys, plush keychains, mascot costumes, OEM/ODM plush manufacturing, sample development, custom packaging and global delivery." />
   <style>
+    :root {
+      --bg: #fff8f1;
+      --cream: #fffdf9;
+      --ink: #263238;
+      --muted: #6f7479;
+      --orange: #f47a5f;
+      --orange-dark: #df5f46;
+      --blue: #6f94bc;
+      --green: #9dbb9c;
+      --lavender: #b8a7d9;
+      --line: rgba(38, 50, 56, 0.12);
+      --shadow: 0 24px 70px rgba(112, 78, 57, 0.16);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff7f0;
-      color: #2b2b2b;
-      text-align: center;
-      padding: 80px 20px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(244, 122, 95, 0.18), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(111, 148, 188, 0.16), transparent 30%),
+        linear-gradient(180deg, #fff8f1 0%, #fffdf9 48%, #f8f2ea 100%);
+      color: var(--ink);
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 248, 241, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--orange), #ffb08e);
+      color: white;
+      box-shadow: 0 12px 28px rgba(244, 122, 95, 0.28);
+      font-size: 22px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-cta {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 88px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.68);
+      color: var(--orange-dark);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
     h1 {
-      font-size: 48px;
-      color: #e87a5d;
+      margin: 22px 0 18px;
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
     }
-    p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: 20px auto;
+
+    .hero p {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.75;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      box-shadow: 0 18px 35px rgba(244, 122, 95, 0.32);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 38px;
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.82), rgba(255, 248, 241, 0.7)),
+        radial-gradient(circle at 70% 20%, rgba(244, 122, 95, 0.22), transparent 34%);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 34px;
+    }
+
+    .plush-stage {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .plush-character {
+      width: min(340px, 75vw);
+      aspect-ratio: 1;
+      border-radius: 48% 52% 46% 54% / 53% 47% 53% 47%;
+      background: linear-gradient(145deg, #f4d8c0, #fff0df 55%, #cfdceb);
+      box-shadow: inset -18px -24px 42px rgba(103, 72, 54, 0.12), 0 28px 70px rgba(100, 68, 46, 0.18);
+      position: relative;
+      display: grid;
+      place-items: center;
+      transform: rotate(-3deg);
+    }
+
+    .plush-character::before,
+    .plush-character::after {
+      content: "";
+      position: absolute;
+      width: 86px;
+      height: 86px;
+      background: #f5d7bf;
+      border-radius: 50% 50% 40% 60%;
+      top: 24px;
+      box-shadow: inset -10px -10px 20px rgba(92, 60, 45, 0.12);
+    }
+
+    .plush-character::before {
+      left: 32px;
+      transform: rotate(-22deg);
+    }
+
+    .plush-character::after {
+      right: 32px;
+      transform: rotate(22deg);
+    }
+
+    .face {
+      position: relative;
+      z-index: 1;
+      width: 210px;
+      height: 150px;
+    }
+
+    .eye {
+      position: absolute;
+      top: 46px;
+      width: 54px;
+      height: 64px;
+      background: #1d252b;
+      border-radius: 50%;
+      box-shadow: inset 10px 8px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .eye.left { left: 28px; }
+    .eye.right { right: 28px; }
+
+    .nose {
+      position: absolute;
+      top: 94px;
+      left: 50%;
+      width: 20px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--orange);
+      transform: translateX(-50%);
+    }
+
+    .mouth {
+      position: absolute;
+      top: 113px;
+      left: 50%;
+      width: 48px;
+      height: 18px;
+      border-bottom: 4px solid #3a2b27;
+      border-radius: 0 0 50px 50px;
+      transform: translateX(-50%);
+    }
+
+    .scarf {
+      position: absolute;
+      bottom: 52px;
+      left: 50%;
+      width: 210px;
+      height: 70px;
+      transform: translateX(-50%);
+      background: var(--blue);
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 50% 70%, 20% 100%);
+      border-radius: 18px;
+      box-shadow: 0 10px 20px rgba(74, 100, 130, 0.2);
+    }
+
+    .floating-card {
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+      width: 240px;
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .floating-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .floating-card span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+    }
+
+    .stat b {
+      display: block;
+      font-size: 24px;
+      color: var(--orange-dark);
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-title p {
+      margin: 0;
+      max-width: 430px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
+      padding: 26px;
+      box-shadow: 0 16px 44px rgba(86, 61, 41, 0.08);
+    }
+
+    .card .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      font-size: 26px;
+      background: rgba(244, 122, 95, 0.14);
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      padding: 20px 16px;
+      border-radius: 24px;
+      background: var(--cream);
+      border: 1px dashed rgba(38, 50, 56, 0.2);
+      min-height: 150px;
+    }
+
+    .step b {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .step h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .feature-strip {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .big-panel {
+      border-radius: 34px;
+      padding: 38px;
+      background: linear-gradient(135deg, #263238, #52636d);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .big-panel h2 {
+      margin-top: 0;
+      font-size: clamp(30px, 4vw, 50px);
+      letter-spacing: -0.04em;
+    }
+
+    .big-panel p {
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .contact-panel {
+      border-radius: 34px;
+      padding: 34px;
+      background: linear-gradient(145deg, #fff, #fff4e8);
+      border: 1px solid var(--line);
+    }
+
+    .contact-panel h3 {
+      margin: 0 0 14px;
+      font-size: 26px;
+    }
+
+    .contact-item {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
       line-height: 1.6;
     }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 28px;
-      background: #e87a5d;
-      color: white;
-      text-decoration: none;
-      border-radius: 999px;
-      font-weight: bold;
+
+    footer {
+      padding: 34px 0 54px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      nav { display: none; }
+      .hero-grid,
+      .feature-strip { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: 1fr; }
+      .process { grid-template-columns: repeat(2, 1fr); }
+      .section-title { display: block; }
+      .section-title p { margin-top: 14px; }
+    }
+
+    @media (max-width: 540px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .hero { padding-top: 58px; }
+      .hero-card { min-height: 460px; padding: 22px; }
+      .floating-card { position: static; width: auto; margin-top: 24px; }
+      .process { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <h1>Uyeah Toys</h1>
-  <p>
-    Custom plush toys, plush keychains, mascot costumes and OEM/ODM plush solutions.
-  </p>
-  <p>
-    From your idea to soft, lovable plush products.
-  </p>
-  <a class="btn" href="mailto:danielhnuyeah2026@gmail.com">Contact Us</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Uyeah Toys home">
+        <span class="brand-mark">🧸</span>
+        <span>Uyeah Toys</span>
+      </a>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#process">Process</a>
+        <a href="#advantages">Advantages</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="mailto:danielhnuyeah2026@gmail.com">Start a Project</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Custom Plush Manufacturer</span>
+          <h1>Turn your character into a plush people remember.</h1>
+          <p>Uyeah Toys helps brands, creators, events, retailers and merch teams develop custom plush toys, plush keychains and mascot costumes from sketches, photos, AI art and original designs.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:danielhnuyeah2026@gmail.com">Get Custom Quote</a>
+            <a class="btn btn-secondary" href="#process">See Process</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>14+</b><span>Years plush customization experience</span></div>
+            <div class="stat"><b>OEM</b><span>Brand, logo and packaging support</span></div>
+            <div class="stat"><b>QC</b><span>Photo, video or inspection before shipment</span></div>
+            <div class="stat"><b>DDP</b><span>Global shipping solutions available</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Cute plush visual">
+          <div class="plush-stage">
+            <div class="plush-character" role="img" aria-label="soft plush toy mascot">
+              <div class="face">
+                <span class="eye left"></span>
+                <span class="eye right"></span>
+                <span class="nose"></span>
+                <span class="mouth"></span>
+              </div>
+              <div class="scarf"></div>
+            </div>
+            <div class="floating-card">
+              <strong>From idea to sample</strong>
+              <span>We provide sample development and reasonable detail revisions before bulk production approval.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Plush products for brands, gifts and character merch.</h2>
+          <p>Choose the category that fits your design. We will suggest a reasonable size, fabric, craft and packaging plan based on your final use.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">🧸</div>
+            <h3>Custom Plush Toys</h3>
+            <p>Soft character dolls, animal plush, pillows and collectible plush products with custom colors, expressions, clothes and accessories.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🔑</div>
+            <h3>Plush Keychains</h3>
+            <p>Mini plush pendants, bag charms, claw machine toys and promotional gifts with metal hooks, hangtags, labels and custom packaging.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎪</div>
+            <h3>Mascot Costumes</h3>
+            <p>Custom mascot costumes for events, schools, sports teams, promotions and exhibitions, with design confirmation and production follow-up.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Clear process, fewer surprises.</h2>
+          <p>Each custom order moves from design confirmation to sampling, revision, production, quality check and delivery.</p>
+        </div>
+        <div class="process">
+          <div class="step"><b>1</b><h4>Send Design</h4><p>Share sketches, photos, AI art, logo files or reference images.</p></div>
+          <div class="step"><b>2</b><h4>Check Details</h4><p>We confirm size, fabric, craft, color, logo and accessories.</p></div>
+          <div class="step"><b>3</b><h4>Make Sample</h4><p>Sample photos or videos are provided for checking before bulk order.</p></div>
+          <div class="step"><b>4</b><h4>Revise</h4><p>Reasonable detail revisions can be arranged before final approval.</p></div>
+          <div class="step"><b>5</b><h4>Bulk Production</h4><p>Stable production with fabric cutting, embroidery, sewing and filling.</p></div>
+          <div class="step"><b>6</b><h4>Ship</h4><p>Support air, sea, express and door-to-door delivery options.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="advantages">
+      <div class="container">
+        <div class="section-title">
+          <h2>Factory details that make plush feel premium.</h2>
+          <p>Good plush is not only cute. It needs the right material, shape control, stitching, filling and quality checking.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">🧵</div>
+            <h3>Fabric & Filling</h3>
+            <ul>
+              <li>Soft plush, short plush, long plush, rabbit fur, fleece and special texture fabrics.</li>
+              <li>Soft PP cotton filling for a full and comfortable hand feel.</li>
+              <li>Eco-friendly material options available when needed.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="icon">🪡</div>
+            <h3>Craft & Detail</h3>
+            <ul>
+              <li>Embroidery, applique, printing, clothes, labels, hangtags and accessories.</li>
+              <li>Computer embroidery for clearer eyes, logos and expression details.</li>
+              <li>Design restoration is checked as closely as possible before production.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="icon">✅</div>
+            <h3>Quality & Support</h3>
+            <ul>
+              <li>Photo and video updates can be shared during sampling and production.</li>
+              <li>Video inspection or third-party inspection can be arranged if required.</li>
+              <li>Safety compliance support for CE, ASTM, CPSIA and EN71 projects when needed.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container feature-strip">
+        <div class="big-panel">
+          <h2>Have a character? Let’s make it soft.</h2>
+          <p>Send your design, target quantity, size idea and packaging requirement. We will help check the best plush solution and quotation for your project.</p>
+          <div class="pill-list">
+            <span class="pill">Custom Plush Toys</span>
+            <span class="pill">Plush Keychains</span>
+            <span class="pill">Mascot Costumes</span>
+            <span class="pill">OEM / ODM</span>
+            <span class="pill">Custom Packaging</span>
+            <span class="pill">Global Delivery</span>
+          </div>
+        </div>
+        <div class="contact-panel">
+          <h3>Contact Uyeah Toys</h3>
+          <div class="contact-item"><strong>Email</strong><br /><a href="mailto:danielhnuyeah2026@gmail.com">danielhnuyeah2026@gmail.com</a></div>
+          <div class="contact-item"><strong>WhatsApp</strong><br /><a href="https://wa.me/8618707488496">+86 18707488496</a></div>
+          <div class="contact-item"><strong>Main Products</strong><br />Custom plush toys, keychains and mascot costumes</div>
+          <a class="btn btn-primary" href="mailto:danielhnuyeah2026@gmail.com" style="margin-top: 18px; width: 100%;">Send Your Design</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Uyeah Toys. Custom plush manufacturing and OEM/ODM plush solutions.</div>
+  </footer>
 </body>
 </html>
